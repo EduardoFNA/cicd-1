@@ -12,8 +12,17 @@ jobs:
     runs-on: ubuntu-latest
   
     steps:
-      - name: descargar el repo
-        uses: actions/checkout@v2
+      - name: descargar el repo ⚡
+        uses: actions/checkout@v4
   
-      - name: Hola Push
+      - name: Hola Push 🔔
         run: echo "hola mundo desde github actions on push"
+
+      - name: Hola desde el ambiente de desarrollo 😊
+        if: ${{github.ref == 'refs/heads/develop'}}
+        run: echo "Hola desde la rama develop"
+
+      - name: Hola desde el ambiente Main 🥸
+        if: ${{github.ref == 'refs/heads/main'}}
+        run: echo "Hola desde la rama main"
+
