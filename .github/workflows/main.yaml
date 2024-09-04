@@ -3,17 +3,17 @@ name: HolaMundo
 on:
   push:
     branches:
-    - main
-    - develop
-    - releases
-    - hotfix
+      - main
+      - develop
+      - releases
+      - hotfix
 jobs:
   Saludos:
     runs-on: ubuntu-latest
   
     steps:
       - name: descargar el repo
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
   
       - name: Hola Push
         run: echo "hola mundo desde github actions on push"
